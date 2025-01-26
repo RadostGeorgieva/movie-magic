@@ -32,6 +32,15 @@ app.get('/details', (req, res) => {
     res.render('details')
 
 });
+app.get('/search', (req, res) => {
+
+    res.render('search')
+
+});
+app.get('/search', (req, res) => {
+
+    res.render('search')
+
 });
 app.get('/*', (req, res) => {
 
