@@ -13,7 +13,7 @@ movieController.get('/create', (req, res) => {
 movieController.get('/search', (req, res) => {
     const filter = req.query
     const movies = movieService.findAll(filter);
-    res.render('search', { movies });
+    res.render('search', { movies, filter });
 
 });
 
