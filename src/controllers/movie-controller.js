@@ -9,6 +9,13 @@ movieController.get('/create', (req, res) => {
 
 });
 
+
+movieController.get('/search', (req, res) => {
+
+    res.redirect('/search')
+
+});
+
 movieController.post('/create', (req, res) => {
     const newMovie = req.body;
     movieService.create(newMovie);
