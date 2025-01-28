@@ -5,7 +5,7 @@ const router =  Router();
 
 router.get('/', (req, res) => {
     const movies = movieService.findAll();
-    res.render('home', {movies})
+    res.render('home', {movies: []})
 
 });
 router.get('/about', (req, res) => {
