@@ -11,7 +11,7 @@ movieController.get('/create', (req, res) => {
 
 
 movieController.get('/search', (req, res) => {
-
+    const movies = movieService.findAll();
     res.redirect('/search')
 
 });

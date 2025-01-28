@@ -19,8 +19,8 @@ router.get('/create', (req, res) => {
 
 });
 router.get('/search', (req, res) => {
-
-    res.render('search')
+    const movies = movieService.findAll();
+    res.render('search', {movies})
 
 });
 
