@@ -8,7 +8,6 @@ const app = express();
 
 //db configuration
 try {
-    const url = 'mongodb://localhost:27017/movie-magic'
     await mongoose.connect(uri);
     
     console.log('DB Connected Sucesfully');
@@ -21,6 +20,9 @@ try {
 //handlebars configuration
 app.engine('hbs', handlebars.engine({
     extname: 'hbs',
+    runtimeOptions: {
+        allowProtoPropertiesByDefault: true,
+    },
     helpers: {
        showRating:showRatingHelper,
     }
