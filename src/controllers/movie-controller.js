@@ -23,11 +23,11 @@ movieController.post('/create', (req, res) => {
     res.render('create');
 
 });
-movieController.get('/:movieId/details', (req, res) => {
+movieController.get('/:movieId/details', async (req, res) => {
     const movieId = req.params.movieId;
-    const movie = movieService.findOne(movieId);
+    const movie = await movieService.findOne(movieId);
 
-    res.render('details', { movies });
+    res.render('details', { movie });
 });
 
 

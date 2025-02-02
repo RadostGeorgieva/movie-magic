@@ -8,6 +8,7 @@ const app = express();
 
 //db configuration
 try {
+    const uri = 'mongodb://localhost:27017/magic-movies'
     await mongoose.connect(uri);
     
     console.log('DB Connected Sucesfully');
