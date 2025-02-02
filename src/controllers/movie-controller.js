@@ -3,19 +3,19 @@ import movieService from "../services/movie-service.js";
 
 const movieController =  Router();
 
+movieController.get('/search', async(req, res) => {
+    const filter = req.query
+    const movies = await movieService.findAll(filter);
+    res.render('search', { movies, filter });
+
+});
+
 movieController.get('/create', (req, res) => {
 
     res.render('create')
 
 });
 
-
-movieController.get('/search', (req, res) => {
-    const filter = req.query
-    const movies = movieService.findAll(filter);
-    res.render('search', { movies, filter });
-
-});
 
 movieController.post('/create', (req, res) => {
     const newMovie = req.body;

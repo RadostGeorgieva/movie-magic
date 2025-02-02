@@ -15,15 +15,5 @@ router.get('/about', (req, res) => {
     res.render('about')
 
 });
-router.get('/create', (req, res) => {
-
-    res.render('create')
-
-});
-router.get('/search', (req, res) => {
-    const movies = movieService.findAll();
-    res.render('search', {movies})
-
-});
 
 export default router;
