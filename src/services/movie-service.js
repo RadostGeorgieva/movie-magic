@@ -27,6 +27,9 @@ export default {
 
         return result;
     },
+    getOneWithCasts(movieId) {
+        return this.findOne(movieId).populate('casts');
+    },
 
     create(movieData) {
         const newMovie = Movie.create({
@@ -37,6 +40,11 @@ export default {
         })
 
         return newMovie;
+    },
+
+    async attachCast(movieId, castId) {
+
+        return Movie.findByIdAndUpdate(movieId, { $push: { casts: castId } });
     }
 }
 
