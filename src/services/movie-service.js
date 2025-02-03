@@ -29,13 +29,14 @@ export default {
     },
 
     create(movieData) {
-        const newId = uuid();
-        movies.push({
+        const newMovie = Movie.create({
             ...movieData,
             rating: Number(movieData.rating),
-        });
+            year: Number(movieData.year)
 
-        return newId;
+        })
+
+        return newMovie;
     }
 }
 
