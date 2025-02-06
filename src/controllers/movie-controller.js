@@ -6,7 +6,7 @@ const movieController = Router();
 
 movieController.get('/search', async (req, res) => {
     const filter = req.query;
-    const movies = await movieService.getAll(filter);
+    const movies = await movieService.findAll(filter)
 
     res.render('search', { movies, filter });
 });
