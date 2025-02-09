@@ -33,7 +33,6 @@ authController.post('/login', async (req, res) => {
         return res.redirect('/404')
         
     }
-    res.redirect('/');
 
 })
 export default authController;
