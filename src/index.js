@@ -2,6 +2,7 @@ import express from 'express';
 import handlebars from 'express-handlebars';
 import mongoose from 'mongoose';
 import routes from './routes.js';
+import cookieParser from 'cookie-parser';
 import showRatingHelper from './helpers/rating-helper.js';
 
 const app = express();
@@ -35,7 +36,7 @@ app.set ('views', 'src/views')
 //express configuration
 app.use('/static', express.static('./src/public'))
 app.use(express.urlencoded({extended: false}))
-
+app.use(cookieParser());
 //setup routes
 app.use(routes);
 
