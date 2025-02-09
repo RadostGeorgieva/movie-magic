@@ -4,7 +4,7 @@ import authService from "../services/auth-service.js";
 const authController = Router();
 
 
-authController.get('/register', (req, res) => {
+authController.get('/register',async (req, res) => {
     res.render('auth/register')
 })
 
@@ -16,7 +16,7 @@ authController.post('/register', async (req, res) => {
 
 })
 
-authController.get('/login', async (req, res) => {
+authController.get('/login', (req, res) => {
     res.render('auth/login')
 })
 
@@ -24,9 +24,9 @@ authController.post('/login', async (req, res) => {
     const { email, password } = req.body;
     try {
         const token = await authService.login(email,password)
-        console.log(tokenº  );
         
-
+        res.cookie('auth', token);
+        res.redirect('/');
     } catch(err) {
         console.log(err.message);
 
