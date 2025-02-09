@@ -31,11 +31,12 @@ export default {
         return this.findOne(movieId).populate('casts');
     },
 
-    create(movieData) {
+    create(movieData, creatorId) {
         const newMovie = Movie.create({
             ...movieData,
             rating: Number(movieData.rating),
-            year: Number(movieData.year)
+            year: Number(movieData.year),
+            creator: creatorId,
 
         })
 
